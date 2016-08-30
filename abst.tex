@@ -1,0 +1,55 @@
+\documentclass[a4j,twocolumn,uplatex]{jsarticle}
+
+\def\Vec#1{\mbox{\boldmath $#1$}}
+\usepackage[dvipdfmx]{graphicx}
+
+\setlength{\textheight}{275mm}
+\headheight 5mm
+\topmargin -30mm
+\textwidth 185mm
+\oddsidemargin -15mm
+\evensidemargin -15mm
+\pagestyle{empty}
+
+\begin{document}
+\title{GitHubを利用したRuby初心者支援ソフトの開発}
+\author{情報科学科 西谷研究室 2549 浦田　航貴}
+\date{}
+\maketitle
+\section{はじめに}
+西谷研究室では，Rubyプログラミングを修得するために初心者向けの問題集に取り組み学習している．本研究では進捗状況の管理や指導者からの添削をより容易におこなえるように改善するため，バージョン管理ソフトGitHubを利用することにした．さらにRubyプログラミングで重要となるテスト駆動をおこなえる環境を用意する．これにより，学習者自身が出力チェックできるようにし，Rubyプログラミングにおけるテスト実行に自然と慣れるような学習形態を目指す．本研究では，Ruby初心者が文法だけでなく，Rubyプログラミングにおける振る舞いを身につけるための支援ソフトを開発する．
+
+\section{使用ツール}
+\subsection{2.1 GitHubについて}
+GitHubとは，コンピュータープログラムの元となるソースコードを,インターネット上で管理するためのサービス.複数人が携わるソフトウェア開発において,ソースコードの共有や，バージョン管理といった作業は必要不可欠となる.GitHubには，ソースコードを始めとするプログラム開発に必要なファイルやそれらの変更履歴等を保存する「リポジトリ」と呼ばれる場所があり，ソースコード等のバージョンを管理する機能の他，プログラム開発等に対する開発者間でのレビューやコメント機能，プログラム開発の進捗を管理する機能等が備わっている.[1]
+
+\subsection{2.2 Rspecについて}
+RSpecとはプログラムの振舞いを記述するためのドメイン特化言語を提供するフレームワークであり，「プログラムの振舞」とはプログラム全体あるいは様々なレベルでの部分 (モジュールやクラス，メソッド) に対して期待する振舞のことである.またドメイン特化言語 (Domain Specific Language:DSL) とは，特定の問題領域 (ドメイン) を記述するために設計された「言語」．RSpec が特化しているドメインは，開発対象のプログラムの振舞を記述する，という領域である．[2]
+
+\section{開発要件}
+本研究では以下のような機能を実装する．
+
+\subsection{テスト駆動(Rspec)}
+Rspecによって期待されている値と出力している値が一致しているかを確認できる．テストコードを使えば「puts を使って毎回目視で確認」なんてするよりも，高速で確実に実行結果を検証することができる.また,テストコードを書いておけば他の人も「このメソッドを呼ぶと何が起こるか」を理解しやすくなる.しかし，良くも悪くも独自のDSL（ドメイン固有言語）を使っているために学習コストが大きい。
+
+\subsection{GitHubでの進捗確認（画像）}
+緑の濃さに応じて進捗状況を把握できる．作業した日時と作業内容も確認できる．
+
+\section{結論と今後の課題}
+現段階ではテストする時,RSpecを使用しているが西谷研究室に所属している学生に試用してもらい意見を聞いた所，RSpecによるテスト結果の出力が複雑であるという意見が多かったため，より単純な結果を出力してくれるTest::Unit（minitest）を用いることを考えている.
+
+\section{reference:}
+
+\bibliographystyle{jplain}
+\renewcommand{\bibname}{参考文献}
+\begin{thebibliography}{1}
+
+\bibitem{sample}
+著者名,
+\newblock 書名,
+\newblock {In \textit{Proceedingとか}}, pp. 179-188, (2009).
+
+
+\end{thebibliography}
+
+\end{document}
